@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+/* fonts used start */
+@font-face {
+    font-family: Ubuntu Light;
+    src: url(fonts/Ubuntu-Light.ttf);
+}
+@font-face {
+    font-family: Ubuntu Reg;
+    src: url(fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+    font-family: Ubuntu Med;
+    src: url(fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+    font-family: Ubuntu Bold;
+    src: url(fonts/Ubuntu-Bold.ttf);
+}
+.ubuntu-light {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .ubuntu-regular {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .ubuntu-medium {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .ubuntu-bold {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  
+/* font used end */
+
+/* font Declared */
+h1, h2, h3 {
+    font-family: Ubuntu Bold;
+}
+ h4, h5, h6 {
+    font-family: Ubuntu Med;
+}
+p {
+    font-family: Ubuntu Reg;
+}
+span {
+    font-family: Ubuntu light;
+}
+/* font Declared end */

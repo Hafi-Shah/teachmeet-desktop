@@ -12,13 +12,13 @@ const createWindow = () => {
     setTimeout(() => {
         // Create the browser window.
         win = new BrowserWindow({
-            width: 900,
+            width: 1200,
             height: 700,
             icon: './src/favicon.ico'
         });
 
         // Set minimum width
-        win.setMinimumSize(900, 700); // Set your desired minimum width here
+        win.setMinimumSize(1200, 700); // Set your desired minimum width here
 
         // and load the app.
         win.loadURL(url.format({

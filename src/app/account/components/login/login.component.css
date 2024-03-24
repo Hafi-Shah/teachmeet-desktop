@@ -1,19 +1,19 @@
 .login {
-    min-height: 100vh;
+  min-height: 100vh;
 }
- .background {
-    background: url('../../../../assets/images/blue.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
- }
+.background {
+  background: url("../../../../assets/images/blue.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
- .welcome{
-    font-size: 26px;
- }
+.welcome {
+  font-size: 26px;
+}
 
- .register {
-    font-weight: 700;
-    letter-spacing: 1px;
-    cursor: pointer;
- }
+.register {
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

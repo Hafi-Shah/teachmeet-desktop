@@ -16,10 +16,7 @@ export class LoginComponent {
 
   onRoute(path:any){
     debugger
-    this.router.navigate(['faculty/home']);
+    this.router.navigate([path]);
   }
 
-  log(){
-  this.router.navigate(['faculty/home']);
-  }
 }

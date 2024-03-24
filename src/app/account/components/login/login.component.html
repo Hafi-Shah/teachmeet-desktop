@@ -6,7 +6,8 @@
                 <div class="mx-auto w-75">
                 <div class="login-txt">
                     <p class="text-color-secondary welcome" (click)="log()">Welcome Facluty!</p>
-                    <h1>Login To Meet Your
+                    <h1 class="text-color-primary">
+                        Login To Meet Your
                         <br>
                         apprentice.</h1>
                 </div>
@@ -17,11 +18,11 @@
                       </div>
                       <div class="form-group mt-3">
                         <label>Password</label>
-                        <input type="password" class="w-100 bg-light mt-1 border-8 input-field" placeholder="Password">
+                        <input type="password" class="w-100 bg-light mt-1 border-8 input-field" placeholder="******">
                       </div>
                       <button (click)="onRoute('faculty/home')" class="w-100 btn-primary mt-5 border-8">Login</button>
                 </form>
-                <p class="text-center mt-3">
+                <p class="text-center mt-3 text-color-primary">
                     Don't Have an account - 
                     <span (click)="onRoute('register')" class="register text-color-secondary">
                         Register Now!

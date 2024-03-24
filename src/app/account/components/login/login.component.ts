@@ -14,14 +14,12 @@ export class LoginComponent {
     private router: Router
   ){}
 
-  onRoute(path: any) {
-    console.log(this.a);
-    this.router.navigate([path]);
-    
+  onRoute(path:any){
+    debugger
+    this.router.navigate(['faculty/home']);
   }
 
   log(){
-  console.log(this.a);
   this.router.navigate(['faculty/home']);
   }
 }

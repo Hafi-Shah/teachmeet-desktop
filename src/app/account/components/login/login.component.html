@@ -1,7 +1,37 @@
-<h1>Hello Ubunto</h1>
-<h2>Hello Ubunto</h2>
-<h3>Hello Ubunto</h3>
-
-
-
-<button class="btn btn-primary m-5" (click)="log()">login</button>
+<section class="login">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-7 d-flex flex-column vh-100 justify-content-center bg-white p-4">
+                <div class="mx-auto w-75">
+                <div class="login-txt">
+                    <p class="text-color-secondary welcome" (click)="log()">Welcome Facluty!</p>
+                    <h1>Login To Meet Your
+                        <br>
+                        apprentice.</h1>
+                </div>
+                <form class="mt-4 w-100" action="">
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="w-100 mt-1 bg-light border-8 input-field" placeholder="faculty@gmail.com">
+                      </div>
+                      <div class="form-group mt-3">
+                        <label>Password</label>
+                        <input type="password" class="w-100 bg-light mt-1 border-8 input-field" placeholder="Password">
+                      </div>
+                      <button (click)="onRoute('faculty/home')" class="w-100 btn-primary mt-5 border-8">Login</button>
+                </form>
+                <p class="text-center mt-3">
+                    Don't Have an account - 
+                    <span (click)="onRoute('register')" class="register text-color-secondary">
+                        Register Now!
+                    </span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-md-5 background">
+        </div>
+        </div>
+        </div>
+</section>

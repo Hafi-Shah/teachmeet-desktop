@@ -88,7 +88,7 @@ span {
 .btn-primary {
   background-color: #3953a4;
   color: #fff;
-  padding: 7px 0px;
+  padding: 10px 0px;
   border: 0;
   font-size: 18px;
   font-family: Ubuntu Med;
@@ -101,7 +101,7 @@ span {
 .btn-secondary {
   background-color: #f47b56;
   color: #fff;
-  padding: 7px 0px;
+  padding: 10px 0px;
   border: 0;
   font-size: 18px;
   font-family: Ubuntu Med;
@@ -133,4 +133,8 @@ p {
 
 .light-shadow {
   box-shadow: 10px 10xp 3px rgb(0, 0, 0);
+}
+
+.curson-p {
+  cursor: pointer;
 }

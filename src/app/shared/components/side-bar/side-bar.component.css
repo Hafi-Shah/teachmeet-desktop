@@ -1,0 +1,50 @@
+.profile {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  transition: none;
+}
+i {
+  transition: none;
+}
+
+.status {
+  margin-top: -30px;
+  background: white;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.081);
+  width: 90px;
+  border-radius: 50px;
+  & i {
+    font-size: 8px;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+  }
+  & p {
+    font-size: 13px;
+  }
+}
+
+.status-green {
+  color: green;
+}
+.side-bar {
+  height: 94vh;
+}
+
+.actions {
+  & i {
+    font-size: 20px;
+  }
+  & p {
+    font-size: 21px;
+  }
+}
+.custom-actions:hover {
+  color: #ffffff;
+}

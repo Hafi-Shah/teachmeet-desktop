@@ -12,7 +12,6 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onRoute(path: any) {
-    debugger;
     this.router.navigate([path]);
   }
 }

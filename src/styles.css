@@ -1,68 +1,75 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
 /* fonts used start */
 @font-face {
-    font-family: Ubuntu Light;
-    src: url(fonts/Ubuntu-Light.ttf);
+  font-family: Ubuntu Light;
+  src: url(fonts/Ubuntu-Light.ttf);
 }
 @font-face {
-    font-family: Ubuntu Reg;
-    src: url(fonts/Ubuntu-Regular.ttf);
+  font-family: Ubuntu Reg;
+  src: url(fonts/Ubuntu-Regular.ttf);
 }
 @font-face {
-    font-family: Ubuntu Med;
-    src: url(fonts/Ubuntu-Medium.ttf);
+  font-family: Ubuntu Med;
+  src: url(fonts/Ubuntu-Medium.ttf);
 }
 @font-face {
-    font-family: Ubuntu Bold;
-    src: url(fonts/Ubuntu-Bold.ttf);
+  font-family: Ubuntu Bold;
+  src: url(fonts/Ubuntu-Bold.ttf);
 }
 .ubuntu-light {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .ubuntu-regular {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .ubuntu-medium {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .ubuntu-bold {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
 
-  
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* font used end */
 
-
-* {transition: 0.5s;}
-
-h1, h2, h3 {
-    font-family: Ubuntu Bold;
+* {
+  transition: 0.3s;
+  box-sizing: border-box;
 }
- h4, h5, h6 {
-    font-family: Ubuntu Med;
+
+h1,
+h2,
+h3 {
+  font-family: Ubuntu Bold;
+}
+h4,
+h5,
+h6 {
+  font-family: Ubuntu Med;
 }
 p {
-    font-family: Ubuntu Reg;
+  font-family: Ubuntu Reg;
 }
 span {
-    font-family: Ubuntu Light;
+  font-family: Ubuntu Light;
 }
 /* font Declared end */
 
 .bg-primary {
   background-color: #3953a4;
 }
-.bg-secondary {
+.bg-second {
   background-color: #f47a56;
 }
 
@@ -124,7 +131,7 @@ label {
   outline: none;
 }
 .input-field::placeholder {
-  color: #00000043;
+  color: #0000006e;
 }
 
 p {
@@ -137,4 +144,26 @@ p {
 
 .curson-p {
   cursor: pointer;
+}
+.bg-lightblue {
+  background: #2c418123;
+}
+
+/* hover stats */
+.bg-hover-primary:hover {
+  background: #2c4181;
+  color: #fff;
+}
+
+.bg-hover-secondary:hover {
+  background: #f47a56;
+  color: #fff;
+}
+
+.bg-hover-primary-light:hover {
+  background: #2c418134;
+}
+
+.bg-hover-secondary-light:hover {
+  background: #f47b5640;
 }

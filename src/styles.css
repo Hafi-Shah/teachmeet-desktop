@@ -1,5 +1,8 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-
+:root {
+  --primarycolor: #3953a4;
+  --secondarycolor: #f47a56;
+}
 /* fonts used start */
 @font-face {
   font-family: Ubuntu Light;

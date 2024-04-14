@@ -5,7 +5,16 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.notification {
+  position: absolute;
+  right: 30px;
+  color: var(--primarycolor);
+  font-size: 20px;
+  transition: 0.2s ease-in;
+}
+.notification:hover {
+  color: var(--secondarycolor);
+}
 p {
   transition: none;
 }

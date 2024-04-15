@@ -5,3 +5,12 @@
   background-repeat: no-repeat;
   height: 20vh;
 }
+
+.nav-link {
+  background: rgb(245, 245, 245);
+  color: var(--primarycolor);
+}
+
+.nav-link.active {
+  background: var(--primarycolor);
+}

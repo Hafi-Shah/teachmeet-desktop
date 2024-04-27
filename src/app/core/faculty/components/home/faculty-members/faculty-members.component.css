@@ -10,26 +10,22 @@
   background-color: rgb(244, 244, 244);
   & .status {
     position: absolute;
-<<<<<<< HEAD
+
     top: 8px;
     left: 8px;
     font-size: 8px;
-=======
+
     top: 10px;
     left: 10px;
     font-size: 9px;
->>>>>>> 26db3cf87823e523cf4fda193c584a67121d2446
+
     box-shadow: 0 5px 10px rgb(227, 227, 227);
     & i {
       position: relative;
       top: -1px;
     }
     & p {
-<<<<<<< HEAD
-      font-size: 11px;
-=======
       font-size: 12px;
->>>>>>> 26db3cf87823e523cf4fda193c584a67121d2446
     }
     & .green {
       color: green;
@@ -65,12 +61,6 @@
 }
 
 .card-white:hover {
-<<<<<<< HEAD
-  z-index: 1;
-  background-color: #fff;
-  box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.086);
-=======
   background-color: #fff;
   box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.062);
->>>>>>> 26db3cf87823e523cf4fda193c584a67121d2446
 }

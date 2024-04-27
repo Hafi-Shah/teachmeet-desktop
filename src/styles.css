@@ -2,6 +2,7 @@
 :root {
   --primarycolor: #3953a4;
   --secondarycolor: #f47a56;
+  --light-blue: #2c418123;
 }
 /* fonts used start */
 @font-face {
@@ -69,7 +70,7 @@ span {
 }
 /* font Declared end */
 
-.bg-primary {
+.bg-prim {
   background-color: #3953a4;
 }
 .bg-second {
@@ -159,7 +160,7 @@ p {
 }
 
 .bg-hover-secondary:hover {
-  background: #f47a56;
+  background: #dd6f4d;
   color: #fff;
 }
 

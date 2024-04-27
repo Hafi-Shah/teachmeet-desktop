@@ -1,0 +1,60 @@
+.profile {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  border-radius: 16px;
+  background-color: rgb(244, 244, 244);
+  & .status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 9px;
+    box-shadow: 0 5px 10px rgb(227, 227, 227);
+    & i {
+      position: relative;
+      top: -1px;
+    }
+    & p {
+      font-size: 12px;
+    }
+    & .green {
+      color: green;
+    }
+    & .red {
+      color: red;
+    }
+  }
+  & .faculty-data {
+    line-height: 14px;
+    & h2 {
+      line-height: 25px;
+      font-size: 22px;
+    }
+  }
+  & .actions {
+    & button {
+      border-radius: 8px;
+      border: 0;
+      padding: 4px 0;
+      color: #fff;
+    }
+    & .meet {
+      border: 1px solid var(--secondarycolor);
+      color: var(--secondarycolor);
+      background: white;
+    }
+    & .meet:hover {
+      color: #fff;
+      background: var(--secondarycolor);
+    }
+  }
+}
+
+.card-white:hover {
+  background-color: #fff;
+  box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.062);
+}

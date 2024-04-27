@@ -4,10 +4,11 @@
       <div class="banner mt-2 border-16 w-100"></div>
       <div class="pt-4"></div>
       <div class="p-2 w-100 border-16 bg-white">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <ul class="nav p-2 nav-pills" id="pills-tab" role="tablist">
           <li class="nav-item w-50" role="presentation">
             <button
               class="nav-link active w-100"
+              style="border-radius: 8px 0px 0px 8px"
               id="pills-home-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-home"
@@ -29,6 +30,7 @@
               role="tab"
               aria-controls="pills-profile"
               aria-selected="false"
+              style="border-radius: 0px 8px 8px 0px"
             >
               Students
             </button>
@@ -41,7 +43,21 @@
             role="tabpanel"
             aria-labelledby="pills-home-tab"
           >
-            <app-faculty-members></app-faculty-members>
+            <div class="search d-flex p-2 w-100">
+              <div class="bg-light w-100 p-2 border-8">
+                <i class="bi bi-funnel-fill"></i>
+                <input
+                  type="text"
+                  placeholder="Search"
+                  class="border-8 border-0 d-inline mx-2"
+                />
+              </div>
+            </div>
+            <div class="data-section p-2 bg-white">
+              <div class="scroll-area">
+                <app-faculty-members></app-faculty-members>
+              </div>
+            </div>
           </div>
           <div
             class="tab-pane fade"
@@ -50,14 +66,6 @@
             aria-labelledby="pills-profile-tab"
           >
             <app-students></app-students>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="pills-contact"
-            role="tabpanel"
-            aria-labelledby="pills-contact-tab"
-          >
-            ...
           </div>
         </div>
       </div>

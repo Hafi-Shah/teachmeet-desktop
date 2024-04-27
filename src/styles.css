@@ -2,6 +2,7 @@
 :root {
   --primarycolor: #3953a4;
   --secondarycolor: #f47a56;
+  --light-blue: #2c418123;
 }
 /* fonts used start */
 @font-face {
@@ -46,6 +47,30 @@
 
 /* font used end */
 
+/* scroll bar design */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primarycolor);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2c4181;
+}
+/* scroll bar design end */
+
 * {
   transition: 0.3s;
   box-sizing: border-box;
@@ -69,7 +94,7 @@ span {
 }
 /* font Declared end */
 
-.bg-primary {
+.bg-prim {
   background-color: #3953a4;
 }
 .bg-second {
@@ -159,7 +184,7 @@ p {
 }
 
 .bg-hover-secondary:hover {
-  background: #f47a56;
+  background: #dd6f4d;
   color: #fff;
 }
 

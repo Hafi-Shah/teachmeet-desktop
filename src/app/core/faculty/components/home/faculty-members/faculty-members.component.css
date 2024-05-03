@@ -51,7 +51,6 @@
     & .meet {
       border: 1px solid var(--secondarycolor);
       color: var(--secondarycolor);
-      background: white;
     }
     & .meet:hover {
       color: #fff;
@@ -63,4 +62,19 @@
 .card-white:hover {
   background-color: #fff;
   box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.062);
+}
+
+.search {
+  & i {
+    color: var(--secondarycolor);
+  }
+  & input {
+    width: 95%;
+    background: transparent;
+  }
+  & input:active,
+  & input:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }

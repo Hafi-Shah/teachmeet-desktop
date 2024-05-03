@@ -29,23 +29,8 @@ student-pil {
 }
 
 .data-section {
-  height: 55vh;
+  max-height: 61vh;
   overflow: hidden;
   overflow-y: scroll;
   border-radius: 0 16px;
-}
-
-.search {
-  & i {
-    color: var(--secondarycolor);
-  }
-  & input {
-    width: 95%;
-    background: transparent;
-  }
-  & input:active,
-  & input:focus {
-    outline: none;
-    box-shadow: none;
-  }
 }

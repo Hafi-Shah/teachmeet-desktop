@@ -10,6 +10,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { ViewFacultyDetailsComponent } from './components/home/faculty-members/view-faculty-details/view-faculty-details.component';
 import { ViewStudentDetailsComponent } from './components/home/students/view-student-details/view-student-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,11 @@ import { ViewStudentDetailsComponent } from './components/home/students/view-stu
     ViewStudentDetailsComponent,
   ],
   exports: [StudentsComponent, FacultyMembersComponent],
-  imports: [CommonModule, FacultyRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    FacultyRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
+  ],
 })
 export class FacultyModule {}

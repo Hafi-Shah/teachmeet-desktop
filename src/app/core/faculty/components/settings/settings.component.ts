@@ -23,7 +23,7 @@ export class SettingsComponent implements OnInit {
   }
 
   swtichValue() {
-    debugger;
+    // debugger;
     console.log(
       'Initial value of switch:',
       this.settingsForm.get('status').value

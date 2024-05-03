@@ -1,7 +1,13 @@
 <div class="container-fluid bg-light vh-100">
   <div class="p-2">
-    <p><span (click)="onRoute('faculty/home')">Back </span>settings works!</p>
-    <div class="accordion w-75" id="accordionPanelsStayOpenExample">
+    <div class="d-flex text-color-primary mb-4 mt-3">
+      <i
+        (click)="onRoute('faculty/home')"
+        class="bi bi-chevron-left me-2 curson-p back"
+      ></i>
+      <h4 class="">settings</h4>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button

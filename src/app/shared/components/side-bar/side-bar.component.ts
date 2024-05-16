@@ -7,6 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./side-bar.component.css'],
 })
 export class SideBarComponent {
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
+  }
+
   constructor(private router: Router) {}
 
   onRout(path: any) {

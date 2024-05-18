@@ -28,7 +28,12 @@
             <p class="text-color-secondary mb-4">BS(CS)</p>
           </div>
           <div class="actions w-100">
-            <button class="bg-prim bg-hover-primary w-100 mb-2">Meet</button>
+            <button
+              (click)="show()"
+              class="bg-prim bg-hover-primary w-100 mb-2"
+            >
+              Meet
+            </button>
             <button
               (click)="onRoute('faculty/view-faculty-details')"
               class="meet w-100"

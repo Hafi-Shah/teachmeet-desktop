@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { MeetDialogComponent } from 'src/app/shared/dialogs/meet-dialog/meet-dialog.component';
 
 @Component({
   selector: 'app-faculty-members',
@@ -7,7 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./faculty-members.component.css'],
 })
 export class FacultyMembersComponent {
-  constructor(private router: Router) {}
+  ref: DynamicDialogRef | undefined;
+  constructor(private router: Router, private dialogService: DialogService) {}
+  show() {
+    this.ref = this.dialogService.open(MeetDialogComponent, { header: '' });
+  }
   onRoute(path: any) {
     this.router.navigate([path]);
   }

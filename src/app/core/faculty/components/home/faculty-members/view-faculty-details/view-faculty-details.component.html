@@ -1,2 +1,73 @@
-<span class="bg-lightblue p-2" (click)="onRoute('faculty/home')">back</span>
-<p class="p-4">view-faculty-details works!</p>
+<div class="bg-second w-100 position-absolute secbg"></div>
+<div class="mx-auto" style="max-width: 1000px">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 d-flex flex-column justify-content-center">
+        <div class="card border-16 border-0 py-2 shadow">
+          <div class="card-body py-4">
+            <div
+              class="mx-auto profile mt-3 mb-3 border-8"
+              style="background-image: url('../../../assets/images/blue.jpg')"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 d-flex flex-column vh-100 justify-content-center">
+        <div class="card border-16 border-0 shadow">
+          <div class="card-body pt-4">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex">
+                <h5 class="text-color-secondary">First Name:</h5>
+                <h5 class="mx-2 text-color-primary">Syed Abdul</h5>
+              </div>
+              <div class="d-flex">
+                <h5 class="text-color-secondary">Last Name:</h5>
+                <h5 class="mx-2 text-color-primary">Haroon</h5>
+              </div>
+              <div class="d-flex">
+                <h5 class="text-color-secondary">Title:</h5>
+                <h5 class="mx-2 text-color-primary">Hod</h5>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <div class="d-flex">
+                <h5 class="text-color-secondary">Email:</h5>
+                <h5 class="mx-2 text-color-primary">SyedAbdul1223@gmail.com</h5>
+              </div>
+              <div class="d-flex">
+                <h5 class="text-color-secondary">Department:</h5>
+                <h5 class="mx-2 text-color-primary">Computer Science</h5>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <div class="d-flex">
+                <h5 class="text-color-secondary">Contact:</h5>
+                <h5 class="mx-2 text-color-primary">03131594597</h5>
+              </div>
+              <div class="d-flex">
+                <h5 class="text-color-secondary">Gender:</h5>
+                <h5 class="mx-2 text-color-primary">Male</h5>
+              </div>
+              <div class="d-flex">
+                <h5 class="text-color-secondary">Age:</h5>
+                <h5 class="mx-2 text-color-primary">25</h5>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mt-4">
+              <button
+                (click)="onRoute('faculty/home')"
+                class="btn-secondary mx-2 px-4 border-8"
+              >
+                Back
+              </button>
+              <button class="btn-primary px-4 border-8">Meet Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

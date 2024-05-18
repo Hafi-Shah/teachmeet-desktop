@@ -1,0 +1,18 @@
+.secbg {
+  height: 50vh;
+}
+.card {
+  /* height: 35vh; */
+  border-radius: 8px;
+}
+
+h5 {
+  font-size: calc(16px + 1px);
+}
+
+.profile {
+  width: 148px;
+  height: 148px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

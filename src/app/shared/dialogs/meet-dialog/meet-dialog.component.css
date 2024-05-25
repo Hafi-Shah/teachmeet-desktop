@@ -1,0 +1,5 @@
+:host ::ngdeep {
+  .dropdown.p-dropdown {
+    background: red;
+  }
+}

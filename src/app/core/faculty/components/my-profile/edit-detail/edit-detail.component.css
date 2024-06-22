@@ -1,0 +1,33 @@
+.back {
+  font-size: 23px;
+}
+
+.accordion-button:active,
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+button {
+  border-radius: 0;
+}
+
+.accordion {
+  border-radius: 0px;
+  color: #fff;
+}
+.accordion-button {
+  border-radius: 0;
+  background-color: #fff;
+  color: var(--primarycolor);
+}
+.accordion-item {
+  border-radius: 0px;
+  background-color: #fff;
+  border: 0;
+  box-shadow: 3px 10px 30px rgb(236, 236, 236);
+}
+
+.pic {
+  width: 200px;
+}

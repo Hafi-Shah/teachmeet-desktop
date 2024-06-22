@@ -1,0 +1,59 @@
+<div class="container-fluid bg-light vh-100">
+  <div class="p-2">
+    <div class="d-flex text-color-primary mb-4 mt-3">
+      <i
+        (click)="onRoute('faculty/myProfile')"
+        class="bi bi-chevron-left me-2 curson-p back"
+      ></i>
+      <h4 class="mt-1">Update Detail</h4>
+    </div>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne"
+          >
+            Edit Profile Picture
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseOne"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body d-flex w-100">
+            <div>
+              <p>Current Profile Pic</p>
+              <img
+                src="../../../../../../assets/images/avatar.jpg"
+                class="img img-thumbnail pic me-5"
+                alt=""
+              />
+            </div>
+            <div class="card border-0 w-100 d-flex justify-content-center">
+              <p-toast></p-toast>
+              <p-fileUpload
+                name="demo[]"
+                url="https://www.primefaces.org/cdn/api/upload.php"
+                (onUpload)="onUpload($event)"
+                accept="image/*"
+              >
+                <ng-template pTemplate="content">
+                  <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">
+                      {{ file.name }} - {{ file.size }} bytes
+                    </li>
+                  </ul>
+                </ng-template>
+              </p-fileUpload>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

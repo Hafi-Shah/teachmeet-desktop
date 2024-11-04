@@ -55,6 +55,7 @@ i {
 .actions {
   & i {
     font-size: 18px;
+    font-family: Ubuntu Med;
   }
   & p {
     font-size: 19px;

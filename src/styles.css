@@ -4,6 +4,7 @@
   --secondarycolor: #f47a56;
   --light-blue: #2c418123;
   --grey-text: #2c41818d;
+  --primary-hover: #0f162c;
 }
 /* fonts used start */
 @font-face {
@@ -101,6 +102,9 @@ span {
 .bg-second {
   background-color: #f47a56;
 }
+.bg-lightblue {
+  background: var(--light-blue) !important;
+}
 
 .text-color-primary {
   color: #3953a4;
@@ -122,7 +126,7 @@ span {
 }
 
 .btn-primary {
-  background-color: #3953a4;
+  background-color: var(--primarycolor);
   color: #fff;
   padding: 10px 0px;
   border: 0;
@@ -131,11 +135,11 @@ span {
 }
 
 .btn-primary:hover {
-  background-color: #2c4181;
+  background-color: var(--primary-hover);
 }
 
 .btn-prim {
-  background-color: #3953a4;
+  background-color: var(--primarycolor);
   color: #fff;
   padding: 10px 0px;
   border: 0;
@@ -144,7 +148,7 @@ span {
 }
 
 .btn-prim:hover {
-  background-color: #2c4181;
+  background-color: var(--primary-hover);
 }
 
 .btn-secondary {
@@ -180,7 +184,27 @@ label {
   margin-left: 5px;
   font-size: 16px;
 }
-
+input {
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: Ubuntu Reg;
+}
+select {
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: Ubuntu Reg;
+}
+textarea {
+  outline: none !important;
+  box-shadow: none !important;
+  font-family: Ubuntu Reg;
+}
+option {
+  font-family: Ubuntu Reg;
+}
+input::placeholder {
+  font-family: Ubuntu Reg;
+}
 .input-field {
   border: 0;
   padding: 12px 14px;
@@ -200,9 +224,6 @@ p {
 
 .curson-p {
   cursor: pointer;
-}
-.bg-lightblue {
-  background: #2c418123;
 }
 
 /* hover stats */

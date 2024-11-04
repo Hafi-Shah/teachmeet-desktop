@@ -7,7 +7,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast'; // Import ToastModule
 import { MessageService } from 'primeng/api'; // Import MessageService
-
+import { StepsModule } from 'primeng/steps';
+import { MultiSelectModule } from 'primeng/multiselect';
 @NgModule({
   declarations: [],
   imports: [
@@ -17,15 +18,19 @@ import { MessageService } from 'primeng/api'; // Import MessageService
     DynamicDialogModule,
     DropdownModule,
     FileUploadModule,
+    StepsModule,
     ToastModule, // Add ToastModule to imports
+    MultiSelectModule,
   ],
   exports: [
     ButtonModule,
     DialogModule,
     DynamicDialogModule,
     DropdownModule,
+    StepsModule,
     FileUploadModule,
     ToastModule, // Export ToastModule
+    MultiSelectModule,
   ],
   providers: [
     DialogService,

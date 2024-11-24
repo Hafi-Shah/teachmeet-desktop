@@ -137,7 +137,38 @@
             {{ option.value }}
           </option>
         </select>
-        <p-multiSelect
+        <!-- office timing -->
+        <div formArrayName="officeTimings">
+          <div *ngFor="let timing of officeTimings.controls; let i = index" [formGroupName]="i" class="d-flex gap-3 mb-3">
+            <select class="form-select" formControlName="day">
+              <option [value]="" disabled selected>Select Day</option>
+              <option *ngFor="let option of officeTimingOptions" [value]="option.day">
+                {{ option.day }}
+              </option>
+            </select>
+      
+            <select class="form-select" formControlName="startTime">
+              <option [value]="" disabled selected>Select Start Time</option>
+              <option *ngFor="let option of officeTimingOptions" [value]="option.OfficeTime">
+                {{ option.OfficeTime }}
+              </option>
+            </select>
+      
+            <select class="form-select" formControlName="endTime">
+              <option [value]="" disabled selected>Select End Time</option>
+              <option *ngFor="let option of officeTimingOptions" [value]="option.OfficeTime">
+                {{ option.OfficeTime }}
+              </option>
+            </select>
+      
+            <button type="button" class="btn btn-danger" (click)="removeTiming(i)">Remove</button>
+          </div>
+        </div>
+      
+        <button class="btn-secondary border-8 py-1 mt-3 w-50">
+          Add Timing +
+        </button>
+        <!-- <p-multiSelect
           [style]="{
             width: '50%',
             padding: '0',
@@ -152,7 +183,7 @@
           formControlName="officeTiming"
           optionLabel="name"
           placeholder="Office Timing"
-        ></p-multiSelect>
+        ></p-multiSelect> -->
 
         <p class="mt-3">Select Gender</p>
         <div class="form-check form-check-inline">

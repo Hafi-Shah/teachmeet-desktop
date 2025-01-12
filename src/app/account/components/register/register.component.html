@@ -44,7 +44,7 @@
       </button>
     </li>
   </ul>
-  <form>
+  <form [formGroup]="form" (submit)="onSubmit()">
     <!-- Tab Content -->
     <div class="tab-content" id="myTabContent">
       <div
@@ -59,38 +59,44 @@
           type="text"
           placeholder="First Name"
           class="form-control w-50 border-0 bg-lightblue"
+          formControlName="fName"
           required
         />
         <input
           type="text"
           placeholder="Last Name"
           class="form-control w-50 border-0 bg-lightblue mt-4"
+          formControlName="lName"
           required
         />
         <input
-          type="number"
+          type="text"
           placeholder="Phone No"
           class="form-control w-50 border-0 bg-lightblue mt-4"
+          formControlName="phone"
           required
         />
         <input
           type="email"
           placeholder="Email"
           class="form-control w-50 border-0 bg-lightblue mt-4"
+          formControlName="email"
           required
         />
         <input
           type="password"
           placeholder="Password"
           class="form-control w-50 border-0 bg-lightblue mt-4"
+          formControlName="password"
           required
         />
-        <input
+        <!-- <input
           type="password"
           placeholder="Confirm Password"
           class="form-control w-50 border-0 bg-lightblue mt-4"
+          formControlName="confirmPassowrd"
           required
-        />
+        /> -->
         <p class="mt-4 text-color-primary">
           Already Have an account -
           <span
@@ -116,59 +122,30 @@
           maxlength="400"
           placeholder="Profile Detail"
           class="form-control w-50 border-0 bg-lightblue"
+          formControlName="description"
         ></textarea>
         <select
           class="form-select w-50 border-0 bg-lightblue mt-3 py-2"
           id="optionSelect"
-          formControlName="selectedOption"
+          formControlName="title"
         >
           <option [value]="" disabled selected>Select Title</option>
-          <option *ngFor="let option of TitleList" [value]="option.id">
-            {{ option.value }}
+          <option *ngFor="let option of titles" [value]="option.id">
+            {{ option.name }}
           </option>
         </select>
         <select
           class="form-select w-50 border-0 bg-lightblue mt-3"
           id="optionSelect"
-          formControlName="selectedOption"
+          formControlName="department"
         >
           <option [value]="" disabled selected>Select Department</option>
-          <option *ngFor="let option of departmentList" [value]="option.id">
-            {{ option.value }}
+          <option *ngFor="let option of departments" [value]="option.id">
+            {{ option.name }}
           </option>
         </select>
-        <!-- office timing -->
-        <div formArrayName="officeTimings">
-          <div *ngFor="let timing of officeTimings.controls; let i = index" [formGroupName]="i" class="d-flex gap-3 mb-3">
-            <select class="form-select" formControlName="day">
-              <option [value]="" disabled selected>Select Day</option>
-              <option *ngFor="let option of officeTimingOptions" [value]="option.day">
-                {{ option.day }}
-              </option>
-            </select>
-      
-            <select class="form-select" formControlName="startTime">
-              <option [value]="" disabled selected>Select Start Time</option>
-              <option *ngFor="let option of officeTimingOptions" [value]="option.OfficeTime">
-                {{ option.OfficeTime }}
-              </option>
-            </select>
-      
-            <select class="form-select" formControlName="endTime">
-              <option [value]="" disabled selected>Select End Time</option>
-              <option *ngFor="let option of officeTimingOptions" [value]="option.OfficeTime">
-                {{ option.OfficeTime }}
-              </option>
-            </select>
-      
-            <button type="button" class="btn btn-danger" (click)="removeTiming(i)">Remove</button>
-          </div>
-        </div>
-      
-        <button class="btn-secondary border-8 py-1 mt-3 w-50">
-          Add Timing +
-        </button>
-        <!-- <p-multiSelect
+
+        <p-multiSelect
           [style]="{
             width: '50%',
             padding: '0',
@@ -179,33 +156,21 @@
             outline: 'none',
             'box-shadow': 'none'
           }"
-          [options]="officeTiming"
+          [options]="officeTimings"
           formControlName="officeTiming"
-          optionLabel="name"
+          optionLabel="label"
           placeholder="Office Timing"
-        ></p-multiSelect> -->
-
-        <p class="mt-3">Select Gender</p>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio1"
-            value="option1"
-          />
-          <label class="form-check-label" for="inlineRadio1">Male</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio2"
-            value="option2"
-          />
-          <label class="form-check-label" for="inlineRadio2">Female</label>
-        </div>
+        ></p-multiSelect>
+        <select
+          class="form-select w-50 border-0 bg-lightblue mt-3 py-2"
+          id="optionSelect"
+          formControlName="gender"
+        >
+          <option [value]="" disabled selected>Select Gender</option>
+          <option *ngFor="let option of genders" [value]="option.id">
+            {{ option.name }}
+          </option>
+        </select>
       </div>
       <div
         class="tab-pane fade"
@@ -217,13 +182,19 @@
         <p>Set your profile picture please.</p>
         <img src="" alt="" />
         <div class="select w-25">
-          <input type="file" class="bg-lightblue" accept=".png, .jpg, .jpeg" />
+          <input
+            type="file"
+            formControlName="profilePic"
+            class="bg-lightblue"
+            accept=".png, .jpg, .jpeg"
+            (change)="onFileSelected($event)"
+          />
           <button
             class="border-0 bg-lightblue p-5 border-8 w-100 text-color-primary"
           >
             <h6 class="d-flex align-items-center">
-              <i style="font-size: 3rem" class="bi bi-images me-2"></i>Upload
-              Image
+              <i style="font-size: 3rem" class="bi bi-images me-2"></i>
+              Upload Image
             </h6>
           </button>
         </div>

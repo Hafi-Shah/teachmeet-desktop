@@ -1,27 +1,38 @@
-<div class="container-fluid vh-100">
+<div class="container-fluid vh-100" *ngIf="facultyData">
   <div class="row">
     <div class="col-md-3 left vh-100 bg-lightblue">
       <div
         class="mx-auto profile mt-4 mb-3 rounded-circle"
-        style="background-image: url('../../../assets/images/avatar.jpg')"
+        [style.background-image]="
+          'url(' + facultyData.faculty.profileImage + ')'
+        "
       ></div>
       <div class="px-2 detail">
         <div class="name text-center mx-auto">
-          <h3 class="text-color-primary mb-2">Abdul Hameed Khan</h3>
-          <p class="text-color-secondary">HOD (SE)</p>
+          <h3 class="text-color-primary mb-2">
+            {{ facultyData.faculty.firstName }}
+            {{ facultyData.faculty.lastName }}
+          </h3>
+          <p class="text-color-secondary">{{ facultyData.faculty.title }}</p>
         </div>
         <div class="card mt-4 border-0 w-100">
           <div class="card-body">
             <div class="mb-3">
-              <i class="bi bi-envelope-at me-1"></i> haroonkhan@gmail.com
+              <i class="bi bi-envelope-at me-1"></i>
+              {{ facultyData.faculty.email }}
             </div>
             <div class="mb-3">
-              <i class="bi bi-phone me-1"></i> 0313 1594597
+              <i class="bi bi-phone me-1"></i>
+              {{ facultyData.faculty.mobileNumber }}
             </div>
             <div class="mb-3">
-              <i class="bi bi-backpack me-1"></i> SE Department
+              <i class="bi bi-backpack me-1"></i>
+              {{ facultyData.faculty.department }}
             </div>
-            <div><i class="bi bi-person me-1"></i> Male</div>
+            <div>
+              <i class="bi bi-person me-1"></i>
+              {{ facultyData.faculty.gender }}
+            </div>
           </div>
         </div>
       </div>
@@ -30,24 +41,17 @@
       <div class="bio">
         <div class="office-timing mt-5">
           <h4 class="mb-3 text-color-primary">Office Timing</h4>
-          <p>Mon: 8am - 2pm</p>
-          <p>Tue: 10am - 1pm</p>
-          <p>Wed: 11am - 4pm</p>
+
+          <p *ngFor="let item of facultyData.officeTimings">
+            {{ item.day }}: {{ item.startTime }} - {{ item.endTime }}
+          </p>
         </div>
         <h4 class="text-color-primary mt-5">Bio</h4>
         <p class="w-50 mb-5">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore
-          aliquam, nulla, sequi sint mollitia cumque eum hic beatae deleniti
-          saepe laudantium nisi. Fugit aliquam excepturi enim omnis molestiae
-          illum quo. sequi sint mollitia cumque eum hic beatae deleniti saepe
-          laudantium nisi. Fugit aliquam excepturi enim omnis molestiae illum
-          quo.
+          {{ facultyData.faculty.description }}
         </p>
       </div>
       <div>
-        <button class="btn-secondary-outline me-2 px-3 border-8">
-          Edit Data
-        </button>
         <button
           (click)="onRoute('faculty/home')"
           class="btn-prim px-3 border-8"

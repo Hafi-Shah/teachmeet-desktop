@@ -10,9 +10,10 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { ViewFacultyDetailsComponent } from './components/home/faculty-members/view-faculty-details/view-faculty-details.component';
 import { ViewStudentDetailsComponent } from './components/home/students/view-student-details/view-student-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditDetailComponent } from './components/my-profile/edit-detail/edit-detail.component';
 import { NgprimeModule } from 'src/app/shared/widgets/ngprime.module';
+import { FilterPipe } from 'src/app/features/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgprimeModule } from 'src/app/shared/widgets/ngprime.module';
     ViewFacultyDetailsComponent,
     ViewStudentDetailsComponent,
     EditDetailComponent,
+    FilterPipe,
   ],
   exports: [StudentsComponent, FacultyMembersComponent],
   imports: [
@@ -32,6 +34,7 @@ import { NgprimeModule } from 'src/app/shared/widgets/ngprime.module';
     SharedModule,
     ReactiveFormsModule,
     NgprimeModule,
+    FormsModule,
   ],
 })
 export class FacultyModule {}

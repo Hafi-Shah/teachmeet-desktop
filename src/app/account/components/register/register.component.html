@@ -180,7 +180,7 @@
       >
         <h3 class="mt-3">Profile Pic</h3>
         <p>Set your profile picture please.</p>
-        <img src="" alt="" />
+
         <div class="select w-25">
           <input
             type="file"
@@ -194,7 +194,9 @@
           >
             <h6 class="d-flex align-items-center">
               <i style="font-size: 3rem" class="bi bi-images me-2"></i>
-              Upload Image
+              {{
+                image == "" ? "Select Profile Image" : "Profile Image Selected"
+              }}
             </h6>
           </button>
         </div>

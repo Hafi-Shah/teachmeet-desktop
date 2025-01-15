@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', Validators.required),
     phone: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
-    title: new FormControl(' Title', Validators.required),
+    title: new FormControl('Select Title', Validators.required),
     department: new FormControl('Select Department', Validators.required),
     gender: new FormControl('Select Gender', Validators.required),
     officeTiming: new FormControl([], Validators.required),
@@ -58,54 +58,45 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.valid) {
-      const selectedDepKey = Number(this.form.get('department')?.value);
-      const selectedTitleKey = Number(this.form.get('title')?.value);
-      const selectedGenderKey = Number(this.form.get('gender')?.value);
+    const selectedDepKey = Number(this.form.get('department')?.value);
+    const selectedTitleKey = Number(this.form.get('title')?.value);
+    const selectedGenderKey = Number(this.form.get('gender')?.value);
 
-      const officeTimingValue = this.form.get('officeTiming')?.value || [];
-      const selectedOfficeTimingsKeys: number[] = officeTimingValue.map(
-        (timing: { id: number }) => timing.id
-      );
+    const officeTimingValue = this.form.get('officeTiming')?.value || [];
+    const selectedOfficeTimingsKeys: number[] = officeTimingValue.map(
+      (timing: { id: number }) => timing.id
+    );
 
-      const payload: RegisterFaculty = {
-        id: 0,
-        firstName: this.form.get('fName')?.value ?? '',
-        lastName: this.form.get('lName')?.value ?? '',
-        email: this.form.get('email')?.value ?? '',
-        password: this.form.get('password')?.value ?? '',
-        mobileNumber: this.form.get('phone')?.value ?? '',
-        description: this.form.get('description')?.value ?? '',
-        titleId: selectedTitleKey,
-        departmentId: selectedDepKey,
-        genderId: selectedGenderKey,
-        officeTimingIds: selectedOfficeTimingsKeys,
-        profileImage: this.image ?? '',
-      };
+    const payload: RegisterFaculty = {
+      id: 0,
+      firstName: this.form.get('fName')?.value ?? '',
+      lastName: this.form.get('lName')?.value ?? '',
+      email: this.form.get('email')?.value ?? '',
+      password: this.form.get('password')?.value ?? '',
+      mobileNumber: this.form.get('phone')?.value ?? '',
+      description: this.form.get('description')?.value ?? '',
+      titleId: selectedTitleKey,
+      departmentId: selectedDepKey,
+      genderId: selectedGenderKey,
+      officeTimingIds: selectedOfficeTimingsKeys,
+      profileImage: this.image ?? '',
+    };
 
-      this.httpService.post('Faculty/RegisterFaculty', payload).subscribe({
-        next: () => {
-          this.toastService.showToast(
-            ToastType.Success,
-            ToastHeading.Success,
-            'Faculty Registration Successful, Now you can login.'
-          );
-        },
-        error(error) {
-          console.error(error);
-        },
-        complete: () => {
-          this.router.navigate(['/']);
-        },
-      });
-    } else {
-      this.toastService.showToast(
-        ToastType.Warning,
-        ToastHeading.Warning,
-        'Invalid data, Please fill all the required data.'
-      );
-      console.log('invalid data');
-    }
+    this.httpService.post('Faculty/RegisterFaculty', payload).subscribe({
+      next: () => {
+        this.toastService.showToast(
+          ToastType.Success,
+          ToastHeading.Success,
+          'Faculty Registration Successful, Now you can login.'
+        );
+      },
+      error(error) {
+        console.error(error);
+      },
+      complete: () => {
+        this.router.navigate(['/']);
+      },
+    });
   }
 
   fetchAllData(): void {

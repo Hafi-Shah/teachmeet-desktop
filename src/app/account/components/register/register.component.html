@@ -58,45 +58,60 @@
         <input
           type="text"
           placeholder="First Name"
-          class="form-control w-50 border-0 bg-lightblue"
+          class="form-control w-50"
           formControlName="fName"
-          required
+          [ngClass]="{
+            'border border-danger':
+              form.controls['fName'].invalid && form.controls['fName'].touched
+          }"
+          (input)="isFormValid = true"
         />
         <input
           type="text"
           placeholder="Last Name"
-          class="form-control w-50 border-0 bg-lightblue mt-4"
+          class="form-control w-50 mt-4"
           formControlName="lName"
-          required
+          [ngClass]="{
+            'border border-danger':
+              form.controls['lName'].invalid && form.controls['lName'].touched
+          }"
+          (input)="isFormValid = true"
         />
         <input
           type="text"
           placeholder="Phone No"
-          class="form-control w-50 border-0 bg-lightblue mt-4"
+          class="form-control w-50 mt-4"
           formControlName="phone"
-          required
+          [ngClass]="{
+            'border border-danger':
+              form.controls['phone'].invalid && form.controls['phone'].touched
+          }"
+          (input)="isFormValid = true"
         />
         <input
           type="email"
           placeholder="Email"
-          class="form-control w-50 border-0 bg-lightblue mt-4"
+          class="form-control w-50 mt-4"
           formControlName="email"
-          required
+          [ngClass]="{
+            'border border-danger':
+              form.controls['email'].invalid && form.controls['email'].touched
+          }"
+          (input)="isFormValid = true"
         />
         <input
           type="password"
           placeholder="Password"
-          class="form-control w-50 border-0 bg-lightblue mt-4"
+          class="form-control w-50 mt-4"
           formControlName="password"
-          required
+          [ngClass]="{
+            'border border-danger':
+              form.controls['password'].invalid &&
+              form.controls['password'].touched
+          }"
+          (input)="isFormValid = true"
         />
-        <!-- <input
-          type="password"
-          placeholder="Confirm Password"
-          class="form-control w-50 border-0 bg-lightblue mt-4"
-          formControlName="confirmPassowrd"
-          required
-        /> -->
+
         <p class="mt-4 text-color-primary">
           Already Have an account -
           <span
@@ -116,30 +131,45 @@
         <h3 class="mt-3">Enter your bio data</h3>
         <p>This data is required for better search</p>
         <textarea
-          required
-          rows="6"
-          minlength="10"
+          rows="3"
           maxlength="400"
           placeholder="Profile Detail"
-          class="form-control w-50 border-0 bg-lightblue"
+          class="form-control w-50"
           formControlName="description"
+          [ngClass]="{
+            'border border-danger':
+              form.controls['description'].invalid &&
+              form.controls['description'].touched
+          }"
+          (input)="isFormValid = true"
         ></textarea>
+        <label class="mt-3 mb-0">Select Title</label>
         <select
-          class="form-select w-50 border-0 bg-lightblue mt-3 py-2"
+          class="form-select w-50 mt-3 py-2"
           id="optionSelect"
           formControlName="title"
+          [ngClass]="{
+            'border border-danger':
+              form.controls['title'].invalid && form.controls['title'].touched
+          }"
+          (input)="isFormValid = true"
         >
-          <option [value]="" disabled selected>Select Title</option>
           <option *ngFor="let option of titles" [value]="option.id">
             {{ option.name }}
           </option>
         </select>
+        <label class="mt-3 mb-0">Select Department</label>
         <select
-          class="form-select w-50 border-0 bg-lightblue mt-3"
+          class="form-select w-50 mt-3"
           id="optionSelect"
           formControlName="department"
+          [ngClass]="{
+            'border border-danger':
+              form.controls['department'].invalid &&
+              form.controls['department'].touched
+          }"
+          (input)="isFormValid = true"
         >
-          <option [value]="" disabled selected>Select Department</option>
           <option *ngFor="let option of departments" [value]="option.id">
             {{ option.name }}
           </option>
@@ -150,8 +180,7 @@
             width: '50%',
             padding: '0',
             'border-radius': '8px',
-            border: '0',
-            'background-color': '#2c418123',
+
             'margin-top': '16px',
             outline: 'none',
             'box-shadow': 'none'
@@ -160,13 +189,25 @@
           formControlName="officeTiming"
           optionLabel="label"
           placeholder="Office Timing"
+          [ngClass]="{
+            'border border-danger':
+              form.controls['officeTiming'].invalid &&
+              form.controls['officeTiming'].touched
+          }"
+          (input)="isFormValid = true"
         ></p-multiSelect>
+        <br />
+        <label class="mt-3 mb-0">Select Gender</label>
         <select
-          class="form-select w-50 border-0 bg-lightblue mt-3 py-2"
+          class="form-select w-50 mt-3 py-2"
           id="optionSelect"
           formControlName="gender"
+          [ngClass]="{
+            'border border-danger':
+              form.controls['gender'].invalid && form.controls['gender'].touched
+          }"
+          (input)="isFormValid = true"
         >
-          <option [value]="" disabled selected>Select Gender</option>
           <option *ngFor="let option of genders" [value]="option.id">
             {{ option.name }}
           </option>
@@ -190,7 +231,12 @@
             (change)="onFileSelected($event)"
           />
           <button
-            class="border-0 bg-lightblue p-5 border-8 w-100 text-color-primary"
+            [ngClass]="{
+              'border-danger':
+                form.controls['profilePic'].invalid &&
+                form.controls['profilePic'].touched
+            }"
+            class="bg-lightblue border-1 p-5 border-8 w-100 text-color-primary"
           >
             <h6 class="d-flex align-items-center">
               <i style="font-size: 3rem" class="bi bi-images me-2"></i>

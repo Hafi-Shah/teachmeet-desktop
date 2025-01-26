@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditDetailComponent } from './components/my-profile/edit-detail/edit-detail.component';
 import { NgprimeModule } from 'src/app/shared/widgets/ngprime.module';
 import { FilterPipe } from 'src/app/features/pipes/filter.pipe';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FilterPipe } from 'src/app/features/pipes/filter.pipe';
     ViewStudentDetailsComponent,
     EditDetailComponent,
     FilterPipe,
+    NotificationsComponent,
   ],
   exports: [StudentsComponent, FacultyMembersComponent],
   imports: [

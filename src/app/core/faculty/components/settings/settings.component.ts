@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms'; // Import necessary form modules
 import { StorageService } from 'src/app/features/services/storage.service';
@@ -79,6 +79,19 @@ export class SettingsComponent implements OnInit {
         console.error('Error fetching faculty data', err);
       },
     });
+  }
+
+  // Handle window unload event to update the status to false
+  @HostListener('window:beforeunload', ['$event'])
+  @HostListener('window:unload', ['$event'])
+  onAppClose(event: Event) {
+    this.status.facultyId = this.storageService.getValidFacultyId();
+    this.status.status = false;
+
+    // Use navigator.sendBeacon for reliable API call during unload
+    const apiUrl = 'Faculty/ChangeFacultyStatus';
+    const payload = JSON.stringify(this.status);
+    navigator.sendBeacon(apiUrl, payload);
   }
 
   ngOnInit() {

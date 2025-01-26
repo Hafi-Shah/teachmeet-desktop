@@ -8,6 +8,11 @@ import { DropDownRes } from 'src/app/features/models/res/dropdown-res';
 import { OfficeTiming } from 'src/app/features/models/res/office-timeings-res';
 import { RegisterFaculty } from 'src/app/features/models/req/register-faculty-req';
 import { ToastService } from 'src/app/features/services/toast.service';
+export const ValidatorPattern = {
+  NoSpecialCharacterWithoutNumeric: /^[a-zA-Z]+$/, // Only letters, no numbers or special characters
+  NoSpecialCharacterWithNumeric: /^[a-zA-Z0-9]+$/, // Alphanumeric, no special characters
+  Email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Standard email format
+};
 
 @Component({
   selector: 'app-register',
@@ -22,17 +27,34 @@ export class RegisterComponent implements OnInit {
   departments: DropDownRes[] = [];
   officeTimings: OfficeTiming[] = [];
 
+  isFormValid = true;
+
   registerReqDTO!: RegisterFaculty;
   form = new FormGroup({
-    fName: new FormControl('', Validators.required),
-    lName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    fName: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.NoSpecialCharacterWithoutNumeric),
+    ]),
+    lName: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.NoSpecialCharacterWithoutNumeric),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.Email),
+    ]),
     password: new FormControl('', Validators.required),
-    phone: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
-    title: new FormControl('Select Title', Validators.required),
-    department: new FormControl('Select Department', Validators.required),
-    gender: new FormControl('Select Gender', Validators.required),
+    phone: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[0-9]+$'),
+    ]),
+    description: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.NoSpecialCharacterWithNumeric),
+    ]),
+    title: new FormControl('', Validators.required),
+    department: new FormControl('', Validators.required),
+    gender: new FormControl('', Validators.required),
     officeTiming: new FormControl([], Validators.required),
     profilePic: new FormControl('', Validators.required),
   });
@@ -58,6 +80,15 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    this.form.markAllAsTouched();
+    if (this.form.invalid) {
+      this.toastService.showToast(
+        ToastType.Error,
+        ToastHeading.Error,
+        'Please fill the required data'
+      );
+      return;
+    }
     const selectedDepKey = Number(this.form.get('department')?.value);
     const selectedTitleKey = Number(this.form.get('title')?.value);
     const selectedGenderKey = Number(this.form.get('gender')?.value);

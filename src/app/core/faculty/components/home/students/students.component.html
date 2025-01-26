@@ -1,70 +1,39 @@
 <section class="w-100">
-  <div class="search d-flex pb-3 w-100">
+  <div class="search d-flex w-100 mb-3">
     <div class="bg-light w-100 p-2 border-8">
       <i class="bi bi-funnel-fill"></i>
       <input
         type="text"
         placeholder="Search"
         class="border-8 border-0 d-inline mx-2"
+        [(ngModel)]="searchTerm"
       />
     </div>
   </div>
   <div class="row gx-2">
-    <div class="col-md-3">
+    <div
+      class="col-md-4"
+      *ngFor="let cards of facCardsRes | filter : searchTerm : ['name']"
+    >
       <div class="card card-white w-100 border-0 mb-2">
         <div class="card-body">
           <div class="status bg-white p-1 border-8">
-            <div class="green">
+            <div [ngClass]="cards.status ? 'green' : 'red'">
               <i class="bi bi-circle-fill"></i>
-              <p class="d-inline mx-1">Online</p>
+              <p class="d-inline mx-1">
+                {{ cards.status ? "Online" : "Offline" }}
+              </p>
             </div>
           </div>
           <div
             class="mx-auto profile border-8 mb-3"
-            style="background-image: url('../../../assets/images/blue.jpg')"
+            [style.background-image]="'url(' + cards.profileImage + ')'"
           ></div>
           <div class="faculty-data text-center">
-            <h2 class="text-color-primary">Abdul Haroon Khan</h2>
-            <p class="text-color-secondary mb-4">BS(CS)</p>
-          </div>
-          <div class="actions w-100">
-            <button class="bg-prim bg-hover-primary w-100 mb-2">Meet</button>
-            <button
-              (click)="onRoute('faculty/view-student-details')"
-              class="meet w-100"
-            >
-              View
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card card-white w-100 border-0 mb-2">
-        <div class="card-body">
-          <div class="status bg-white p-1 border-8">
-            <div class="red">
-              <i class="bi bi-circle-fill"></i>
-              <p class="d-inline mx-1">Offline</p>
-            </div>
-          </div>
-          <div
-            class="mx-auto profile border-8 mb-3"
-            style="background-image: url('../../../assets/images/blue.jpg')"
-          ></div>
-          <div class="faculty-data text-center">
-            <h2 class="text-color-primary">Abdul Haroon Khan</h2>
-            <p class="text-color-secondary mb-4">BS(CS)</p>
-          </div>
-          <div class="actions w-100">
-            <button class="bg-prim bg-hover-primary w-100 mb-2">Meet</button>
-            <button
-              (click)="onRoute('faculty/view-student-details')"
-              class="meet w-100"
-            >
-              View
-            </button>
+            <h2 class="text-color-primary">
+              {{ cards.name }}
+            </h2>
+            <p class="text-color-secondary mb-4">{{ cards.department }}</p>
           </div>
         </div>
       </div>

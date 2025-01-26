@@ -6,6 +6,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { ViewFacultyDetailsComponent } from './components/home/faculty-members/view-faculty-details/view-faculty-details.component';
 import { ViewStudentDetailsComponent } from './components/home/students/view-student-details/view-student-details.component';
 import { EditDetailComponent } from './components/my-profile/edit-detail/edit-detail.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'view-faculty-details', component: ViewFacultyDetailsComponent },
   { path: 'view-student-details', component: ViewStudentDetailsComponent },
   { path: 'edit-data', component: EditDetailComponent },
+  { path: 'notification', component: NotificationsComponent },
 ];
 
 @NgModule({

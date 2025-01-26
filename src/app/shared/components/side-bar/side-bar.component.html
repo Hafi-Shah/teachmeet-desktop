@@ -2,15 +2,11 @@
   *ngIf="facultyData"
   class="side-bar mt-2 d-flex flex-column justify-content-between p-2 border-16 bg-white"
 >
-  <i (click)="showDialog()" class="bi bi-bell-fill curson-p notification"></i>
-  <!-- 
-        dynamic profile ////////////
-        <div [style.background-image]="'url(' + data[0].profilePic + ')'"
-           [style.background-size]="'cover'"
-           [style.background-repeat]="'no-repeat'"
-           style="width: 150px; height: 150px; border-radius: 10px" class="mx-auto shadow">
-      </div>
-       -->
+  <i
+    (click)="onRout('faculty/notification')"
+    class="bi bi-bell-fill curson-p notification"
+  ></i>
+
   <div>
     <div
       class="mx-auto profile mt-3 mb-3"

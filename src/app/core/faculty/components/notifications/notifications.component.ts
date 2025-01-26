@@ -14,6 +14,15 @@ export interface FacultyNotification {
   createdDate: string;
 }
 
+export interface FacultyNotification1 {
+  id: number;
+  fromStudentName: string;
+  title: string;
+  description: string;
+  isRead: boolean;
+  createdDate: string;
+}
+
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
@@ -22,6 +31,7 @@ export interface FacultyNotification {
 export class NotificationsComponent implements OnInit, OnDestroy {
   myFacId = sessionStorage.getItem('id');
   notificationList: FacultyNotification[] = [];
+  notificationList2: FacultyNotification1[] = [];
   private destroy$ = new Subject<void>(); // Subject to handle unsubscribe
   private intervalId: any; // Store interval ID
 
@@ -41,6 +51,18 @@ export class NotificationsComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (res: any) => {
           this.notificationList = res;
+          console.log(this.notificationList);
+        },
+      });
+    this.http
+      .get(
+        'Notification/GetStudentNotificationForFaculty',
+        new HttpParams().set('facultyId', String(this.myFacId))
+      )
+      .pipe(takeUntil(this.destroy$)) // Automatically unsubscribe on destroy
+      .subscribe({
+        next: (res: any) => {
+          this.notificationList2 = res;
           console.log(this.notificationList);
         },
       });

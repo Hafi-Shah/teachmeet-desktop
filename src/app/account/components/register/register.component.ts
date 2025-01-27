@@ -12,6 +12,7 @@ export const ValidatorPattern = {
   NoSpecialCharacterWithoutNumeric: /^[a-zA-Z]+$/, // Only letters, no numbers or special characters
   NoSpecialCharacterWithNumeric: /^[a-zA-Z0-9]+$/, // Alphanumeric, no special characters
   Email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Standard email format
+  NoSpecialCharacters: /^[a-zA-Z0-9\s]+$/,
 };
 
 @Component({
@@ -50,7 +51,7 @@ export class RegisterComponent implements OnInit {
     ]),
     description: new FormControl('', [
       Validators.required,
-      Validators.pattern(ValidatorPattern.NoSpecialCharacterWithNumeric),
+      Validators.pattern(ValidatorPattern.NoSpecialCharacters),
     ]),
     title: new FormControl('', Validators.required),
     department: new FormControl('', Validators.required),
